@@ -58,7 +58,7 @@
             <div class="form-group" ng-class="{'has-success' : registerForm.password.$valid && registerForm.password.$touched, 'has-error': registerForm.password.$invalid && registerForm.password.$touched}">
                 <input name="password" type="password" class="form-control text-center" ng-model="user.password" ng-required="true" placeholder="password" />
             </div>
-            <div class="form-group" ng-class="{'has-success' : registerForm.verifyPassword.$valid && registerForm.verifyPassword.$touched || user.password == user.verifyPassword, 'has-error': registerForm.verifyPassword.$invalid && registerForm.verifyPassword.$touched || user.password != user.verifyPassword}">
+            <div class="form-group" ng-class="{'has-success' : registerForm.verifyPassword.$valid && registerForm.verifyPassword.$touched && user.password == user.verifyPassword, 'has-error': registerForm.verifyPassword.$invalid && registerForm.verifyPassword.$touched && user.password != user.verifyPassword}">
                 <input name="verifyPassword" type="password" class="form-control text-center" ng-model="user.verifyPassword" ng-required="true" placeholder="verify password" />
             </div>
             <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword ">Submit</button>
