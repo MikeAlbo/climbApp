@@ -1,0 +1,29 @@
+{
+  "name": "climbingApp",
+  "main": "app.js",
+  "authors": [
+    "Michael Albonetti <malbo24@gmail.com>"
+  ],
+  "description": "climbing route log",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jQuery": "^3.1.0",
+    "font-awesome": "^4.6.3",
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-touch": "^1.5.7",
+    "firebase": "^3.2.0",
+    "angularfire": "^2.0.1"
+  }
+}
