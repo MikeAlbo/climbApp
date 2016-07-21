@@ -54,3 +54,10 @@ body {
 .demoMode a {
     font-size: 1.5em;
 }
+
+/* error */
+
+.formError {
+    color: red;
+    font-size: 1em;
+}
