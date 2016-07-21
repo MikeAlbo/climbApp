@@ -1,4 +1,4 @@
-var climbLog = angular.module('climbLog', ['firebase']);
+var climbLog = angular.module("climbLog", ["firebase", "ngRoute"]);
 
 
 // Initialize Firebase
@@ -10,3 +10,29 @@ var climbLog = angular.module('climbLog', ['firebase']);
   };
   
     firebase.initializeApp(config);
+
+
+// routing
+
+climbLog.config(["$routeProvider", function($routeProvider){
+   $routeProvider.
+    when("/login", {
+               templateUrl: "views/login.html",
+               controller: "authCtrl"
+           }).
+    when("/register", {
+               templateUrl: "views/register.html",
+               controller: "authCtrl"
+           }).
+    when("/settings", {
+               templateUrl: "views/settings.html",
+               controller: "settingsCtrl"
+           }).
+    when("/logRoutes", {
+                templateUrl: "views/addRoutes.html",
+                controller: "logRouteCtrl"
+        }).
+    otherwise({
+       redirectTo: "/login"
+   });
+}]);
