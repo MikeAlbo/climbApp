@@ -79,3 +79,34 @@ body {
     width: 9em;
 }
 
+#welcomeBlurb {
+    font-size: 1.2em;
+    color: rgba(150,150,150,1);
+    margin-top: 3em;
+}
+
+
+/* --- rating scale --- */
+#ratingScale table {
+    font-size: 1.2em;
+}
+#ratingScale td {
+    padding: 4px;
+}
+
+#ratingScale {
+    margin-bottom: 35px;
+}
+
+
+#settingsDiv p {
+    margin-top: 1em;
+}
+
+#settingsDiv input {
+    border: 0;
+    border-bottom: 1px solid rgba(150,150,150,.5);
+    border-radius: 2px;
+    box-shadow: 0 0 0 0 ;
+}
+

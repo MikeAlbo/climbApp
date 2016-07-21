@@ -34,6 +34,9 @@ climbLog.config(["$routeProvider", function($routeProvider){
     }).when("/home", {
         controller: "mainCtrl",
         templateUrl: "app/views/home.html"
+    }).when('/ratingsScale', {
+        controller: "settingsCtrl",
+        templateUrl: "app/views/ratingsScale.html"
     }).otherwise({
         redirectTo: '/welcome'
     });
