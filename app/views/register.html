@@ -12,7 +12,7 @@
                 <input name="verifyPassword" type="password" class="form-control text-center" ng-model="user.verifyPassword" ng-required="true" placeholder="verify password" />
             </div>
             <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword ">Submit</button>
-            <p class="text-center linkToOther">Already have an account? <a href="#">Sigin In</a>.</p>
+            <p class="text-center linkToOther">Already have an account? <a ng-href="#/login">Sigin In</a>.</p>
             <p class="demoMode">or, you can explore the app first... <br><a href="#">Register Later</a></p>
         </form>
                 <div class="text-center formError">

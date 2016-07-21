@@ -4,6 +4,15 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+.centerDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 
 
 /* --- login/ register forms --- */
@@ -61,3 +70,12 @@ body {
     color: red;
     font-size: 1em;
 }
+
+
+
+/* --- welcome screen --- */
+
+#welcomeDiv button {
+    width: 9em;
+}
+

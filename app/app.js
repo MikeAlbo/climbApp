@@ -14,25 +14,27 @@ var climbLog = angular.module("climbLog", ["firebase", "ngRoute"]);
 
 // routing
 
+
 climbLog.config(["$routeProvider", function($routeProvider){
-   $routeProvider.
-    when("/login", {
-               templateUrl: "views/login.html",
-               controller: "authCtrl"
-           }).
-    when("/register", {
-               templateUrl: "views/register.html",
-               controller: "authCtrl"
-           }).
-    when("/settings", {
-               templateUrl: "views/settings.html",
-               controller: "settingsCtrl"
-           }).
-    when("/logRoutes", {
-                templateUrl: "views/addRoutes.html",
-                controller: "logRouteCtrl"
-        }).
-    otherwise({
-       redirectTo: "/login"
-   });
+    $routeProvider.when('/login', {
+        controller: "authCtrl",
+        templateUrl: "app/views/login.html"
+    }).when('/register', {
+        controller: "authCtrl",
+        templateUrl: "app/views/register.html"
+    }).when('/settings', {
+        controller: "settingsCtrl",
+        templateUrl: "app/views/settings.html"
+    }).when('/welcome', {
+        controller: "mainCtrl",
+        templateUrl: "app/views/welcome.html"
+    }).when("/logRoutes", {
+        controller: "logRoutesCtrl",
+        templateUrl: "app/views/logRoutes.html"
+    }).when("/home", {
+        controller: "mainCtrl",
+        templateUrl: "app/views/home.html"
+    }).otherwise({
+        redirectTo: '/welcome'
+    });
 }]);
