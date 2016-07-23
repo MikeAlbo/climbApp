@@ -1,1 +1,50 @@
-<p>log routes</p>
+<div class="col-xs-10 col-md-4 forms text-center" id="logRouteForm">
+    <div class="col-xs-12 col-md-12" id="newSessionForm">
+        <h2 class="text-center">Climb <br> <small>Like a Boss</small></h2>
+        <h3 class="text-center">New Session</h3>
+        <form class="form" name="newSession" novalidate>
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name (optional)" ng-model="session.name" />
+            </div>
+            
+            <button class="btn btn-default" type="button" ng-click="session.environment = 'gym'" ng-class="{'active': session.environment == 'gym'}" >
+          Gym
+        </button>
+        
+        <button class="btn btn-default" type="button" ng-click="session.environment = 'outside'" ng-class="{'active': session.environment == 'outside'}" >
+          Outside
+        </button>
+            
+            <div class="form-group">
+                <input type="text" name="location" placeholder="Location (optional)" ng-model="session.location" />
+            </div>
+            <div class="form-group">
+                <select class="form-control" >
+                    <option class="text-center" ng-repeat="option in session.style">{{option}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="date" name="date" ng-model="session.date" />
+            </div>
+        </form>
+        
+        <button class="btn btn-default" type="button" ng-click="scaleSelect = 'yds'" ng-class="{'active': scaleSelect == 'yds'}" >
+          YDS
+        </button>
+        
+        <button class="btn btn-default" type="button" ng-click="scaleSelect = 'uiaa'" ng-class="{'active': scaleSelect == 'uiaa'}" >
+          UIAA
+        </button>
+        
+        <button class="btn btn-default" type="button" ng-click="scaleSelect = 'fr'" ng-class="{'active': scaleSelect == 'fr'}" >
+          FR
+        </button>
+        
+        <button class="btn btn-default" type="button" ng-click="scaleSelect = 'uk'" ng-class="{'active': scaleSelect == 'uk'}" >
+          Uk
+        </button>
+    
+
+        <p>View/edit the <a ng-href="#/ratingsScale" > Point Scale</a>.</p>
+    </div>
+</div>

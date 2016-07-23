@@ -1,0 +1,29 @@
+/* CSS Animations */
+
+.ng-enter {
+    -webkit-transition: .1s;
+    transition: .1s;
+    opacity: 0;
+   
+}
+
+.ng-enter-active {
+    -webkit-transition: .1s;
+    transition: .1s;
+    opacity: 1;
+    
+}
+
+.ng-leave {
+    -webkit-transition: .1s;
+    transition: .1s;
+    opacity: 1;
+    
+}
+
+.ng-leave-active {
+    -webkit-transition: .1s;
+    transition: .1s;
+    opacity: 0;
+
+}

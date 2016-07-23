@@ -1,4 +1,4 @@
-<div class="forms col-xs-10  col-md-4 text-center" id="registerForm">
+<div class="forms col-xs-10 col-md-4 text-center " id="registerForm">
                 <h2 class="text-center">Climb <br> <small>Like a Boss</small></h2>
                 <h3 class="text-center">Register</h3>
         <form name="registerForm" novalidate ng-submit="createUser()">
@@ -11,7 +11,7 @@
             <div class="form-group" ng-class="{'has-success' : registerForm.verifyPassword.$valid && registerForm.verifyPassword.$touched && user.password == user.verifyPassword, 'has-error': registerForm.verifyPassword.$invalid && registerForm.verifyPassword.$touched && user.password != user.verifyPassword}">
                 <input name="verifyPassword" type="password" class="form-control text-center" ng-model="user.verifyPassword" ng-required="true" placeholder="verify password" />
             </div>
-            <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword ">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword " ng-click="go('/settings')">Submit</button>
             <p class="text-center linkToOther">Already have an account? <a ng-href="#/login">Sigin In</a>.</p>
             <p class="demoMode">or, you can explore the app first... <br><a href="#">Register Later</a></p>
         </form>
