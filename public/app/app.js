@@ -41,7 +41,7 @@ climbLog.config(["$routeProvider", function($routeProvider){
         templateUrl: "app/views/settings.html",
         resolve: {
             "currentAuth": ["Auth", function(Auth){
-                return Auth.$requireSignIn();
+                return Auth.$waitForSignIn();
             }]
         }
     }).when('/welcome', {

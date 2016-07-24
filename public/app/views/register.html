@@ -11,12 +11,12 @@
             <div class="form-group" ng-class="{'has-success' : registerForm.verifyPassword.$valid && registerForm.verifyPassword.$touched && user.password == user.verifyPassword, 'has-error': registerForm.verifyPassword.$invalid && registerForm.verifyPassword.$touched && user.password != user.verifyPassword}">
                 <input name="verifyPassword" type="password" class="form-control text-center" ng-model="user.verifyPassword" ng-required="true" placeholder="verify password" />
             </div>
-            <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword " ng-click="go('/settings')">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block" ng-disabled="registerForm.$invalid || user.password != user.verifyPassword ">Submit</button>
             <p class="text-center linkToOther">Already have an account? <a ng-href="#/login">Sigin In</a>.</p>
             <p class="demoMode">or, you can explore the app first... <br><a href="#">Register Later</a></p>
         </form>
                 <div class="text-center formError">
-                    <p ng-show="message">{{message}}</p>
+                    <p ng-show="error.message">{{error.message}}</p>
                     <p ng-show="registerForm.email.$invalid && registerForm.email.$touched">Please enter a valid email.</p>
                     <p ng-show="registerForm.password.$invalid && registerForm.password.$touched">Please enter a valid password.</p>
                     <p ng-show="user.password!= user.verifyPassword && registerForm.verifyPassword.$touched">Your passwords do not match.</p>

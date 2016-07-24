@@ -4,10 +4,10 @@ climbLog.controller('authCtrl', ["$scope", "Auth", "$location", function($scope,
     var newUser;
     
     Auth.$onAuthStateChanged(function(user){
-       if (user && newUser){
-           $location.path("/settings");
+       if (user && newUser && $scope.error != null){
+          $location.path("/settings");
            console.log("user settings path " + user.uid);
-       } else if (user) {
+       } else if (user && $scope.error != null) {
            $location.path('/home');
            console.log("user home path " + user.uid);
        } else {
@@ -15,16 +15,24 @@ climbLog.controller('authCtrl', ["$scope", "Auth", "$location", function($scope,
        }
     });
     
+            $scope.error = {
+                code: "",
+                message: ""
+            };
+    
     // create a new user
     
         $scope.createUser = function(){
-            $scope.error = null;
-            $scope.message = null;
+            $scope.error.code = null;
+            $scope.error.message = null;
             
             Auth.$createUserWithEmailAndPassword($scope.user.email, $scope.user.password).catch(function(error){
-                $scope.error = error.code;
-                $scope.message = error.message;
-            });
+                    $scope.error.code = error.code;
+                    $scope.error.message = error.message;
+                    console.log($scope.error.message);
+                    return $scope.error;
+                });
+            
             
             newUser = true;
         };
@@ -32,12 +40,14 @@ climbLog.controller('authCtrl', ["$scope", "Auth", "$location", function($scope,
     
     // log in a user
         $scope.login = function(){
-            $scope.error= null;
-            $scope.message = null;
+            $scope.error.code = null;
+            $scope.error.message = null;
             
             Auth.$signInWithEmailAndPassword($scope.user.email, $scope.user.password).catch(function(error){
-                $scope.error = error.code;
-                $scope.message = error.message;
+                    $scope.error.code = error.code;
+                    $scope.error.message = error.message;
+                    console.log($scope.error.message);
+                    return $scope.error;
                 
             }).then(function(){
                 newUser = false;
@@ -55,12 +65,14 @@ climbLog.controller('authCtrl', ["$scope", "Auth", "$location", function($scope,
     // log in Anonymously 
             
         $scope.loginAnonymously = function(){
-            $scope.error = null;
-            $scope.message = null;
+            $scope.error.code = null;
+            $scope.error.message = null;
             
             Auth.$signInAnonymously().catch(function(error){
-                $scope.error = error.code;
-                $scope.message = error.message;
+                    $scope.error.code = error.code;
+                    $scope.error.message = error.message;
+                    console.log($scope.error.message);
+                    return $scope.error;
             });
         };
     
