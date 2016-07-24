@@ -15,6 +15,58 @@ body {
     background-color: white;
 }
 
+/* -------------------------------------- */
+/* header */
+
+
+/* -- center the nav links -- */
+
+.navbar {
+    
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+/* -- navbar styles -- */
+
+.navbar-nav {
+    font-size: .8em;
+    
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid rgba(150,150,150,.5);
+}
+
+.navbar-brand {
+    
+    margin-right: 1em;
+}
+
+#createPostNav {
+    color: rgba(50,150,250,1);
+    
+
+}
+
+
+@media (min-width: 768px){
+    #createPostNav {
+        font-size: 1.3em;
+    }
+    
+    
+}
+
+
 
 
 /* --- login/ register forms --- */
@@ -113,4 +165,11 @@ body {
     box-shadow: 0 0 0 0 ;
 }
 
+/* -------------------------------------- */
+/* home */
+
+
+#homeDiv {
+    padding-top: 60px;
+}
 
