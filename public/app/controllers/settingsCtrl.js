@@ -6,7 +6,9 @@ climbLog.controller('settingsCtrl',  ['$scope', 'Auth', "databaseServices", "$lo
     $scope.scaleSelect = 'yds';
     $scope.name = '';
     
-    $scope.user = Auth.$getAuth();
+    Auth.$onAuthStateChanged(function(user){
+        $scope.user = user;
+    });
     
     
     
@@ -19,7 +21,7 @@ climbLog.controller('settingsCtrl',  ['$scope', 'Auth', "databaseServices", "$lo
         $scope.scaleSelect,
         $scope.usePoints);
         
-        setTimeout($location.path('/home'), 5);
+        setTimeout($location.path('/home'), 100);
     };
         
         

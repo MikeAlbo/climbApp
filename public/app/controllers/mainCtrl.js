@@ -31,4 +31,12 @@ climbLog.controller('mainCtrl', ['$scope', '$location', "Auth",  function($scope
     $scope.go = function ( path ) {
   $location.path( path );
 };
+    
+    
+    // logout
+    
+    $scope.logOut = function(){
+        Auth.$signOut();
+        $location.path("/welcome");
+    };
 }]);
