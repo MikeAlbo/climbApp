@@ -1,6 +1,6 @@
 // settings ctrl
 
-climbLog.controller('settingsCtrl',  ['$scope', 'Auth', "databaseServices", "$location", function($scope, Auth, databaseServices, $location){
+climbLog.controller('settingsCtrl',  ['$scope','Auth', "databaseServices", "$location", function($scope, Auth, databaseServices, $location){
     
     $scope.usePoints = true;
     $scope.scaleSelect = 'yds';
@@ -25,22 +25,8 @@ climbLog.controller('settingsCtrl',  ['$scope', 'Auth', "databaseServices", "$lo
     };
         
         
-        
-    $scope.scale = {
-        name: "Yosemite Decimal System",
-        usage: "America!",
-        grades: {
-            grade1: {
-            name: "5.2",
-            point: ".25"
-        }, 
-        grade2: {
-            name: "5.3",
-            point: ".5"
-        }
-    } };
     
-    // redirects page!! change to custome directive to use across controllers
+//     redirects page!! change to custome directive to use across controllers
     $scope.go = function ( path ) {
   $location.path( path );
 };

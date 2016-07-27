@@ -1,31 +1,29 @@
-<div class="col-xs-10 col-md-4 forms text-center" id="logRouteForm">
-    <div class="col-xs-12 col-md-12" id="newSessionForm">
+<div class="col-xs-12  text-center forms" id="logRouteForm" ng-switch="logRoutesForm">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 newRoutes" id="newSessionForm" ng-switch-when="newSession">
         <h2 class="text-center">Climb <br> <small>Like a Boss</small></h2>
         <h3 class="text-center">New Session</h3>
         <form class="form" name="newSession" novalidate>
+            
+            <p ng-model="session.date" id="sessionDate">{{session.sessionDate | date: 'MM/dd/yyyy'}}</p>
+            
             <div class="form-group">
-                <input type="text" name="name" placeholder="Name (optional)" ng-model="session.name" />
+                <input type="text" name="name" class="form-control" placeholder="Name (optional)" ng-model="session.name" />
             </div>
             
-            <button class="btn btn-default" type="button" ng-click="session.environment = 'gym'" ng-class="{'active': session.environment == 'gym'}" >
+            <div class="btn-group">
+                <button class="btn btn-default" type="button" ng-click="session.environment = 'gym'" ng-class="{'active': session.environment == 'gym'}" >
           Gym
         </button>
         
         <button class="btn btn-default" type="button" ng-click="session.environment = 'outside'" ng-class="{'active': session.environment == 'outside'}" >
           Outside
         </button>
+            </div>
             
             <div class="form-group">
-                <input type="text" name="location" placeholder="Location (optional)" ng-model="session.location" />
+                <input type="text" name="location" class= "form-control" placeholder="Location (optional)" ng-model="session.location" />
             </div>
-            <div class="form-group">
-                <select class="form-control" >
-                    <option class="text-center" ng-repeat="option in session.style">{{option}}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="date" name="date" ng-model="session.date" />
-            </div>
+    
         </form>
         
         <button class="btn btn-default" type="button" ng-click="scaleSelect = 'yds'" ng-class="{'active': scaleSelect == 'yds'}" >
@@ -44,7 +42,36 @@
           Uk
         </button>
     
-
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="button" ng-click="createSession()">Add Routes</button>
+        </div>
         <p>View/edit the <a ng-href="#/ratingsScale" > Point Scale</a>.</p>
     </div>
+    
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 newRoutes" id="addRouteForm" ng-switch-when="addRoutes">
+            <h2 class="text-center">Climb <br> <small>Like a Boss</small></h2>
+            <h3 class="text-center">Add Routes</h3>
+            <form name="newRoute" class="form col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+                <div class="form-group">
+                    <input type="text" name="routeName" class="form-control" ng-model="session.route.name" placeholder="route name"/>
+                    
+                </div>
+                <div class="form-group">
+                    <input type="text" name="grade" class="form-control" ng-model="session.route.grade" placeholder="grade"/>
+                    
+                </div>
+                <button class="btn btn-default" type="button" ng-click="createRoute()">Add Route</button>
+            </form>
+            
+        <div class="col-xs-12">
+            <p class="text-center">{{session.name}}</p>
+            <p class="text-center">{{session.scale}}</p>
+            <p class="text-center">{{session.location}}</p>
+        </div>
+        
+        <div class="col-xs-12">
+            <button class="btn btn-danger text-center" ng-click="endSession()">End Session</button>
+        </div>
+        
+    </div> <!-- end add routes -->
 </div>

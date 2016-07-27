@@ -1,29 +1,39 @@
 /* CSS Animations */
 
+
+.ng-enter, .ng-enter-active, .ng-leave, .ng-leave-active, .ng-hide-add, .ng-hide-remove {
+    -webkit-transition: 0.2;
+    transition: 0.2s ;
+	
+}
+
 .ng-enter {
-    -webkit-transition: .1s;
-    transition: .1s;
     opacity: 0;
-   
+    -webkit-transition-delay: .1s;
+	transition-delay: .1s;
 }
 
 .ng-enter-active {
-    -webkit-transition: .1s;
-    transition: .1s;
     opacity: 1;
     
 }
 
 .ng-leave {
-    -webkit-transition: .1s;
-    transition: .1s;
     opacity: 1;
-    
+    display: none;
 }
 
 .ng-leave-active {
-    -webkit-transition: .1s;
-    transition: .1s;
     opacity: 0;
-
 }
+
+.ng-hide-add {
+    opacity: 0;
+}
+
+.ng-hide-remove {
+    opacity: 1;
+}
+
+
+

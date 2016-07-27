@@ -7,11 +7,15 @@ body {
 .centerDiv {
     position: absolute;
     top: 50%;
+/*
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    
+*/
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     background-color: white;
 }
 
@@ -77,11 +81,18 @@ body {
     padding: 2em;
     position: absolute;
     top: 50%;
+/*
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+*/
  
+    -webkit-transform: translateY(-50%);
+ 
+    -ms-transform: translateY(-50%);
+ 
+    transform: translateY(-50%);
 }
 
 .forms h2 {
@@ -169,7 +180,43 @@ body {
 /* home */
 
 
-#homeDiv {
-    padding-top: 60px;
+@media (max-width: 768px){
+  #homeDiv {
+    padding: 0;  
+    padding-top: 50px;  
+    height: 100vh;
+/*    background-color: red !important;*/
+      
+    
+    }
+    
+    .homePageSections {
+/*        background-color: blue;*/
+        height: 90vh;
 }
+}
+
+@media (min-width: 769px){
+  #homeDiv {
+    padding: 0;  
+    padding-top: 50px;  
+    height: 100vh;
+/*    background-color: red !important;*/
+      
+    
+    }
+    
+    .homePageSections {
+/*        background-color: blue;*/
+        height: 30vh;
+        margin-top: 2vh;
+        border: 1px solid rgba(150,150,150,1);
+        border-radius: 3px;
+        
+}
+}
+
+
+
+
 

@@ -1,4 +1,4 @@
-climbLog.controller('mainCtrl', ['$scope', '$location', "Auth",  function($scope, $location, Auth ){
+climbLog.controller('mainCtrl', ['$scope', '$location', "Auth", "Profile",  function($scope, $location, Auth, Profile ){
     
     // retreive current user
 //    $scope.user = Auth.$getAuth();
@@ -11,26 +11,9 @@ climbLog.controller('mainCtrl', ['$scope', '$location', "Auth",  function($scope
    
      $scope.currentUser = Auth.$getAuth();
      
-        
-    // --- log routes --- //
-    // select scale var, changes active state of button
-    $scope.scaleSelect = "top-rope";
-    $scope.selectEnv = "gym";
+   Profile($scope.currentUser.uid).$bindTo($scope, "userProfile"); 
+
     
-    // session model
-    $scope.session = {
-        name: "",
-        sessionDate: Date.now(),
-        scale: $scope.scaleSelect,
-        environment: $scope.selectEnv,
-        style: ["top-rope", "sport", "trad", "alpine", "boulder"],
-        location: ""
-    };
-    
-    // redirects page!! change to custome directive to use across controllers
-    $scope.go = function ( path ) {
-  $location.path( path );
-};
     
     
     // logout
@@ -39,4 +22,11 @@ climbLog.controller('mainCtrl', ['$scope', '$location', "Auth",  function($scope
         Auth.$signOut();
         $location.path("/welcome");
     };
+    
+    // redirects page!! change to custome directive to use across controllers
+    $scope.go = function ( path ) {
+  $location.path( path );
+};
+    
+    
 }]);

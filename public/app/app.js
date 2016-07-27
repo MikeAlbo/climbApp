@@ -14,7 +14,7 @@ var climbLog = angular.module("climbLog", ["firebase", "ngRoute", "ngAnimate"]);
     firebase.initializeApp(config);
 
  //catch login errors and redirec tuser
-    climbLog.run(["$rootScope", "$location", function($rootScope, $location) {
+    climbLog.run(["$rootScope", "$location", "$route" ,function($rootScope, $location, $route) {
       $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
         // We can catch the error thrown when the $requireSignIn promise is rejected
         // and redirect the user back to the home page
@@ -22,6 +22,8 @@ var climbLog = angular.module("climbLog", ["firebase", "ngRoute", "ngAnimate"]);
           $location.path("/welcome");
         }
       });
+        
+        $route.reload();
 
     }]);
 
@@ -41,14 +43,14 @@ climbLog.config(["$routeProvider", function($routeProvider){
         templateUrl: "app/views/settings.html",
         resolve: {
             "currentAuth": ["Auth", function(Auth){
-                return Auth.$waitForSignIn();
+                return Auth.$requireSignIn();
             }]
         }
     }).when('/welcome', {
         controller: "mainCtrl",
         templateUrl: "app/views/welcome.html"
     }).when("/logRoutes", {
-        controller: "mainCtrl",
+        controller: "logRoutesCtrl",
         templateUrl: "app/views/logRoutes.html",
         resolve: {
             "currentAuth": ["Auth", function(Auth){

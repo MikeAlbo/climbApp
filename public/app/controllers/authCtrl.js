@@ -5,9 +5,9 @@ climbLog.controller('authCtrl', ["$scope", "Auth", "$location", function($scope,
     
     Auth.$onAuthStateChanged(function(user){
        if (user && newUser && $scope.error != null){
-          $location.path("/settings");
+           $location.path("/settings");
            console.log("user settings path " + user.uid);
-       } else if (user && $scope.error != null) {
+       } else if (user && $scope.error != null) {   
            $location.path('/home');
            console.log("user home path " + user.uid);
        } else {
